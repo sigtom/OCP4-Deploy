@@ -26,7 +26,7 @@ NOTE: *fork* or *clone* repo so that you can use Your own GitHub Secrets and wor
 .. AWS_REGION
 . Click Deploy button below and run workflow
 
-image::https://github.com/r3dact3d/OCP4-Deploy/actions/workflows/deploy.yaml/badge.svg[link="https://github.com/r3dact3d/OCP4-Deploy/actions/workflows/deploy.yaml"]
+image::https://github.com/sigtom/OCP4-Deploy/actions/workflows/deploy.yaml/badge.svg[link="https://github.com/sigtom/OCP4-Deploy/actions/workflows/deploy.yaml"]
 
 NOTE: You can now check the Actions to watch/check the status of the deployment.  
 
@@ -58,7 +58,7 @@ On completion of Deploy workflow, the GitOps-Tasks workflow will automatically s
 
 . Click below Destroy button to use last saved artifact to destroy Openshift cluster and infra resources.
 
-image::https://github.com/r3dact3d/OCP4-Deploy/actions/workflows/destroy.yaml/badge.svg[link="https://github.com/r3dact3d/OCP4-Deploy/actions/workflows/destroy.yaml"]
+image::https://github.com/sigtom/OCP4-Deploy/actions/workflows/destroy.yaml/badge.svg[link="https://github.com/sigtom/OCP4-Deploy/actions/workflows/destroy.yaml"]
 
 This will kick off the destroy workflow, pulling the artifact from deploy workflow automatically and destroying the AWS resources.
 
