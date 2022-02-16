@@ -16,7 +16,7 @@ jobs:
       - name: Download OCP Cluster Artifacts
         uses: dawidd6/action-download-artifact@v2.15.0
         with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: deploy.yaml
 #          workflow_conclusion: failure
           branch: main
@@ -27,7 +27,7 @@ jobs:
       - name: Install OpenShift CLI tools
         uses: redhat-actions/openshift-tools-installer@v1
         with:
-          openshift-install: "${{secrets.OCP_CLIENT_VERSION}}"
+          openshift-install: "${{ secrets.OCP_CLIENT_VERSION }}"
 
       - name: Destroy OpenShift Cluster
         run: openshift-install destroy cluster --dir=.
