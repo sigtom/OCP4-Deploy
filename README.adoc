@@ -26,7 +26,7 @@ NOTE: *fork* or *clone* repo so that you can use Your own GitHub Secrets and wor
 .. AWS_REGION
 . Click Deploy button below and run workflow
 
-image::../..workflows/deploy.yaml/badge.svg[link="https://github.com/sigtom/OCP4-Deploy/actions/workflows/deploy.yaml"]
+image::https://github.com/sigtom/OCP4-Deploy/actions/workflows/deploy.yaml/badge.svg[link="https://github.com/sigtom/OCP4-Deploy/actions/workflows/deploy.yaml"]
 
 NOTE: You can now check the Actions to watch/check the status of the deployment.  
 
