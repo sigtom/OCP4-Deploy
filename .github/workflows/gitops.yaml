@@ -13,7 +13,13 @@ jobs:
   Setup:
     name: GitOps Day2 Tasks
     runs-on: ubuntu-latest
-    steps:     
+    steps:
+      - name: Checkout r3dact3d/gitops external repo
+        uses: actions/checkout@v2
+        with:
+          repository: r3dact3d/gitops
+          path: gitops
+        
       - name: Install OpenShift CLI tools
         uses: redhat-actions/openshift-tools-installer@v1
         with:
@@ -31,10 +37,10 @@ jobs:
         run: |
           cp ocp-artifact/auth/kubeconfig $GITHUB_WORKSPACE/kubeconfig
           export KUBECONFIG=$GITHUB_WORKSPACE/kubeconfig
+          oc apply -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/gitops-operator.yaml
+          sleep 300
+          oc project openshift-gitops
           oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller
-          oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/blinker19/cluster.yaml
-          sleep 120
-          oc adm policy add-cluster-role-to-user cluster-admin -z openshift-gitops-argocd-application-controller
-          
-      
+          oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/application-onboarding-app.yaml
+          oc create -f https://raw.githubusercontent.com/r3dact3d/gitops/main/gitops-cluster/cluster-onboarding-app.yaml
 
